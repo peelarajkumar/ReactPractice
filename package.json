@@ -2,9 +2,10 @@
   "name": "reactpractice",
   "version": "1.0.0",
   "description": "First React Practice Description",
-  "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "parcel index.html",
+    "build":"parcel build index.html"
   },
   "keywords": [
     "my",

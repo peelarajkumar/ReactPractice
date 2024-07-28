@@ -6,7 +6,7 @@ Steps I have done :
 2. React.createElement and React.createRoot
 3. React element is an Object , render method is used to convert React Object into HTML.
 
-React is Fast because NPM helps React to be Faster
+React is Fast because Parcel ,  NPM helps React to be Faster
 
 NPM : It manages all the Packages and their dependencies we use !
 NPM is a data base for all our Packages.
@@ -21,8 +21,25 @@ Parcel :
 NPM install -D Parcel
 
 Parcel usages:
-npx parcel index.html (building our app in server)
+npx parcel index.html (building our app in server) - dev build
+npx parcel build index.html - Prod Build (Production build code)
 
 1. It hosts our app on local server
 2. It creates a dev build for us
 3. Hot Moduler Replacement - make some changes and save , app will automatically update.
+4. File watching Algorithm
+5. Parcel caching - Builds faster.
+6. Diaognistics Error Handling
+6. Compressing the code 
+7. Image optimisation
+8. Differential building
+9. Tree shaking
+
+
+// JSX - HTML like sytnax to make react more easier
+
+const head = React.createElement("h1",{},"I am Childern")
+const jsxhead = (<h1 id="jsxhead">I Am JSX Childer</h1>)
+
+JSX => React Element => HTML
+JSX -(Parcel-Babel)-React Element - Render - HTML 
