@@ -1,1 +1,28 @@
 My first React Practice App
+
+Steps I have done :
+
+1. React and React DOM using CDN's
+2. React.createElement and React.createRoot
+3. React element is an Object , render method is used to convert React Object into HTML.
+
+React is Fast because NPM helps React to be Faster
+
+NPM : It manages all the Packages and their dependencies we use !
+NPM is a data base for all our Packages.
+
+1.NPM init
+2.We need a bundler : Bundler bundles our code and makes production ready.
+
+Parcel , webpack , wheat are some Bundlers and Parcel is one of the powerful bundler.
+
+Parcel :
+
+NPM install -D Parcel
+
+Parcel usages:
+npx parcel index.html (building our app in server)
+
+1. It hosts our app on local server
+2. It creates a dev build for us
+3. Hot Moduler Replacement - make some changes and save , app will automatically update.
