@@ -1,0 +1,19 @@
+{
+  "name": "reactpractice",
+  "version": "1.0.0",
+  "description": "First React Practice Description",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "my",
+    "react",
+    "practice"
+  ],
+  "author": "rajkumar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
