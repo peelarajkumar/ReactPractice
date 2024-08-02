@@ -12,3 +12,8 @@ React has two type of Components
 
 1 RCC React Class Component (Old)
 2 RFC React Function Component (New)
+
+Elements can be accessed inside elements and component
+Components can be accessed inside Components and Elements
+
+JSX () - It's HTML like syntax , where we can write js by wrapping it in {}
