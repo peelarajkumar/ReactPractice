@@ -43,3 +43,17 @@ const jsxhead = (<h1 id="jsxhead">I Am JSX Childer</h1>)
 
 JSX => React Element => HTML
 JSX -(Parcel-Babel)-React Element - Render - HTML 
+
+
+Props :
+
+Arguments to function - Props to component
+
+key , while looping it's always best to have any uniqueparam as a key - > helps react to know which is the new/changed component . instead of re-rendering all the components
+
+
+we can wrap all of our components in one folder and we can use the component 
+by exporting them.
+
+two types of exports : export default Component;  export const element . component; (Multiple)
+

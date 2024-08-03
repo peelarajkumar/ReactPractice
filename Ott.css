@@ -1,0 +1,10 @@
+#ottlogo{
+    height: 100px;
+    width: 100px;
+}
+
+#ottcards{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+}    
