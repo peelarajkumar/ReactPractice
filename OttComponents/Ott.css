@@ -7,4 +7,9 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-}    
+}  
+
+.expApps{
+margin: 20px;
+cursor: pointer;
+}

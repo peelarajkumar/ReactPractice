@@ -55,5 +55,15 @@ key , while looping it's always best to have any uniqueparam as a key - > helps 
 we can wrap all of our components in one folder and we can use the component 
 by exporting them.
 
-two types of exports : export default Component;  export const element . component; (Multiple)
+two types of exports : export default Component;  export const element . component; (Multiple) ;
+
+
+Hooks - Super power Variable (State Variable) ;
+
+State variables are react variables , where it keeps the data and UI Synchronous.
+Change in data will change the component UI.
+
+useState() - is a hook ( Its a js function which returns array of [variable,SetVariable])
+
+setVariable(newvariable) ---- React Fiber | Diff algorith - i.e takes the old virtual dom , compares it with new virtual dom and then renders the new UI .
 

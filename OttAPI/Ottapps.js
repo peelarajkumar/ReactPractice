@@ -1,4 +1,4 @@
-let Ottapps = {
+var Ottapps = {
     "ottApps": [
       {
         "name": "Netflix",
