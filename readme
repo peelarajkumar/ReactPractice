@@ -65,5 +65,12 @@ Change in data will change the component UI.
 
 useState() - is a hook ( Its a js function which returns array of [variable,SetVariable])
 
-setVariable(newvariable) ---- React Fiber | Diff algorith - i.e takes the old virtual dom , compares it with new virtual dom and then renders the new UI .
+Hooks Rule : can be used only inside the functional Components.
+
+setVariable(newvariable) ---- React Fiber | Diff algorith - i.e takes the old virtual dom , compares it with old and  new virtual dom and then renders the new UI .
+
+
+useEffect() - is a hook , this is executed once the component is completely rendered.
+
+useEffect(()=>{},[]) - it takes two params.
 

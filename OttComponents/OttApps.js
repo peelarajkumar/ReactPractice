@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDom from "react-dom/client";
 import HeaderComponent from "./Header";
 import BodyComponent from "./Body";
 import FooterComponent from "./Footer";
 import Ottapps from "../OttAPI/Ottapps";
-import { useState } from "react";
-
- 
+import { useState , useEffect} from "react";
 
 // head component
 //body component
@@ -17,6 +15,14 @@ const MasterComponent = ()=>{
 
     let [allOttApps,setallOttApps] = useState(Ottapps.ottApps);
     console.log(allOttApps);
+        const fetchAPI = async()=>{
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            const response = await data.json();
+            console.log(response);
+        }
+    useEffect(()=>{ // useEffect executes after the rendering of the Component is done !
+        fetchAPI();
+    },[])
 
     const filterOtts =()=>{
         let expensiveApps = Ottapps.ottApps.filter(item=>{
