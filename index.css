@@ -1,3 +1,33 @@
 #parentdiv{
     color: tomato;
 }
+
+.Sendbtn {
+    background-color: #78e47c; /* Green background */
+    border: none;              /* Remove borders */
+    color: white;              /* White text */
+    padding: 15px 32px;        /* Some padding */
+    text-align: center;        /* Centered text */
+    text-decoration: none;     /* Remove underline */
+    display: inline-block;     /* Make the button inline-block */
+    font-size: 16px;           /* Increase font size */
+    margin: 4px 2px;           /* Some margin */
+    cursor: pointer;           /* Pointer/hand icon */
+    border-radius: 8px;        /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Sendbtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05);    /* Slightly enlarge the button */
+}
+
+.Sendbtn:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    transform: scale(1);       /* Reset scale on click */
+}
+
+.Sendbtn:focus {
+    outline: none;             /* Remove outline when focused */
+    box-shadow: 0 0 5px rgba(0, 150, 0, 0.8); /* Green shadow */
+}
