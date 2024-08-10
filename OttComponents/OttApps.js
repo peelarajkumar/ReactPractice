@@ -11,36 +11,64 @@ import { useState , useEffect} from "react";
 // footer component
 // MasterComponent
 
+let APINames;
+let FinalApiNames =[];
+var NewOttapps = {
+    "ottApps":[]
+}
+
 const MasterComponent = ()=>{
 
-    let [allOttApps,setallOttApps] = useState(Ottapps.ottApps);
-    console.log(allOttApps);
+    const swiggyMode = ()=>{
+        fetchAPI();
+    }
+
+    let [allOttApps,setallOttApps] = useState(Ottapps);
         const fetchAPI = async()=>{
             const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
             const response = await data.json();
-            console.log(response);
+            APINames = response.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+            APINames = APINames.map(item=>item.info)
+            let updatedOttapps = {
+                ottApps: APINames.map(item => ({
+                    name: item.name,
+                    price: item.costForTwo,
+                    devices: [item.locality, item.areaName],
+                    countries: item.cuisines,
+                    imgUrl: "https://techstory.in/wp-content/uploads/2020/10/swiggy.jpg"
+                }))
+            };
+        
+            setallOttApps(updatedOttapps);
+        
         }
-    useEffect(()=>{ // useEffect executes after the rendering of the Component is done !
-        fetchAPI();
-    },[])
+    // useEffect(()=>{ // useEffect executes after the rendering of the Component is done !
+    //     fetchAPI();
+    // },[])
 
     const filterOtts =()=>{
+        
         let expensiveApps = Ottapps.ottApps.filter(item=>{
             let isexpapp = parseFloat(item.price.replace(/[^0-9.]/g, ''))
               return isexpapp>6;
         })
-        setallOttApps(expensiveApps);
-        console.log(expensiveApps);
+        NewOttapps.ottApps=expensiveApps;
+        setallOttApps(NewOttapps);
     }
+
+   
 
     
     var filterButton = <button className="expApps" onClick={filterOtts} >Expensive Otts Apps</button>
 
+    var SwiggyButton = <button className="swiggybtn" onClick={()=>swiggyMode()}>Swiggy Mode</button>
+
     let master = (<div id="master">
         <HeaderComponent/>
         <span className="flt-btn">{filterButton}</span>
+        <span className="flt-btn">{SwiggyButton}</span>
         <div id="ottcards">
-        {allOttApps.map((item, index) => (
+        {allOttApps.ottApps.map((item, index) => (
     <BodyComponent key ={index} ottapps={item} />
 ))}</div>
         <FooterComponent/>
