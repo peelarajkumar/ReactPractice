@@ -31,3 +31,35 @@
     outline: none;             /* Remove outline when focused */
     box-shadow: 0 0 5px rgba(0, 150, 0, 0.8); /* Green shadow */
 }
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #d1d8e0; /* Light border color */
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #f0f4f8; /* Light background color */
+    color: #2c3e50; /* Darker text for contrast */
+}
+
+.search-input:focus {
+    border-color: #74b9ff; /* Light blue border on focus */
+    box-shadow: 0 0 8px rgba(116, 185, 255, 0.5); /* Soft blue shadow */
+    background-color: #ffffff; /* White background on focus */
+}
+
+.search-input::placeholder {
+    color: #95a5a6; /* Light gray placeholder */
+    font-style: italic;
+}
+
+.search-input:hover {
+    border-color: #74b9ff; /* Light blue border on hover */
+}
+
+#search{
+    margin: 20px;
+}
+

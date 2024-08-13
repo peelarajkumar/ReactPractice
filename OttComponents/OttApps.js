@@ -16,6 +16,7 @@ let FinalApiNames =[];
 var NewOttapps = {
     "ottApps":[]
 }
+let updatedOttapps ;
 
 const MasterComponent = ()=>{
 
@@ -29,7 +30,7 @@ const MasterComponent = ()=>{
             const response = await data.json();
             APINames = response.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
             APINames = APINames.map(item=>item.info)
-            let updatedOttapps = {
+            updatedOttapps = {
                 ottApps: APINames.map(item => ({
                     name: item.name,
                     price: item.costForTwo,
@@ -56,9 +57,25 @@ const MasterComponent = ()=>{
         setallOttApps(NewOttapps);
     }
 
+    const filteredNames = () =>{
+        //
+        let searchName = document.getElementById('searchName').value;
+
+        let swiggyfiltercards = updatedOttapps.ottApps.filter(item=>(item.name).includes(searchName));
+        
+        let NewSwiggyapps = {
+            "ottApps":[]
+        }
+        NewSwiggyapps.ottApps = swiggyfiltercards;
+        setallOttApps(NewSwiggyapps);
+
+    }
+
    
 
     
+    var Search = <input id="searchName" className="search-input" type="text" placeholder="Search ..."></input>
+
     var filterButton = <button className="expApps" onClick={filterOtts} >Expensive Otts Apps</button>
 
     var SwiggyButton = <button className="swiggybtn" onClick={()=>swiggyMode()}>Swiggy Mode</button>
@@ -67,6 +84,9 @@ const MasterComponent = ()=>{
         <HeaderComponent/>
         <span className="flt-btn">{filterButton}</span>
         <span className="flt-btn">{SwiggyButton}</span>
+        <div id="search" >{Search} 
+            <span> <button onClick={()=>filteredNames()} className="Sendbtn"> Search </button></span>
+        </div>
         <div id="ottcards">
         {allOttApps.ottApps.map((item, index) => (
     <BodyComponent key ={index} ottapps={item} />
